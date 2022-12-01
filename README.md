@@ -55,7 +55,7 @@ cd modules
 git clone https://github.com/mgarrix/MMM-ShellyEMMeter
 
 cd MMM-ShellyEMMeter
-npm install --save
+npm install
 ```
 
 Check out the `config.sample.js` in the module directory. Copy the content to your `config.js` and change as necessary. You have to change `localuri` to your device's IP address and `refreshInterval` to set the refresh interval (in seconds).
