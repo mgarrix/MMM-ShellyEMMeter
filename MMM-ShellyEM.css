@@ -1,0 +1,16 @@
+.shellyEM-bright {
+    color: var(--color-text-bright);
+}
+
+.shellyEM-big{
+    font-size: var(--font-size-large);
+    line-height: 1;
+}
+
+.shellyEM-red{
+    color: red;
+}
+
+.shellyEM-green{
+    color: rgb(0, 255, 0)
+}
