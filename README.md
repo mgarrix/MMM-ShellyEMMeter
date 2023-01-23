@@ -51,7 +51,7 @@ Include this in your config.js file:
 Go to your MagicMirror directory
 
 ```bash
-cd modules
+cd mounts/modules
 git clone https://github.com/mgarrix/MMM-ShellyEMMeter
 
 cd MMM-ShellyEMMeter
