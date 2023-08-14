@@ -1,6 +1,6 @@
 var NodeHelper = require("node_helper");
 
-const request = require("request");
+const axios = require('axios');
 
 module.exports = NodeHelper.create({
   init() {
@@ -23,18 +23,16 @@ module.exports = NodeHelper.create({
       var payload = {
         uri: this.config.localuri,
       };
-      request(payload.uri, { json: true, timeout: 25000 }, (err, res, body) => {
-        if (err) {
-          return console.log(err);
-        } else {
-          payload = {
-            emeters: body["emeters"],
-          };
-          //console.log("Body ", body['emeters']);
-        }
-        //console.log("Sending Shelly data to FE module", payload);
-        this.sendSocketNotification("ShellyEMData", payload);
+      const self = this;
+      axios.get(payload.uri)
+      .then(function (response) {
+        const data = response.data;
+        self.sendSocketNotification('ShellyEMData', data);
+      })
+      .catch(function (error) {
+        console.error('Error fetching data:', error);
       });
+     
     }
   },
 });
