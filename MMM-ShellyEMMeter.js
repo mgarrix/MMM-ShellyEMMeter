@@ -60,7 +60,7 @@ Module.register("MMM-ShellyEMMeter", {
   },
 
   socketNotificationReceived: function (notification, payload) {
-    //Log.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
+    Log.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
     if (notification === "message_from_helper") {
       this.config.message = payload;
       this.updateDom(1000);
