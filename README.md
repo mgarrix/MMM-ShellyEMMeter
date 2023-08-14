@@ -25,7 +25,7 @@ For it to work properly, it's best to have a static IP for your Shelly. Since it
 ## Prerequisites
 
 - You need to have a MagicMirror² up and running, also a [Shelly EM sensor](https://shelly.cloud/) with a fixed IP.
-- The default 'clock' module must be active because the 'ShellyEMMeter' module uses the events fired by 'clock' to call Shelly on the lan.
+- The default 'clock' module must be active because the 'ShellyEMMeter' module uses the events fired by 'clock' to call Shelly on the lan. In addition, in the configuration of the 'clock' module, **sendNotifications: true** must be set.
 
 
 ## Configuration
