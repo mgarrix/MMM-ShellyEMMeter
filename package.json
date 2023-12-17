@@ -19,7 +19,6 @@
   "author": "Maurizio Garritano",
   "license": "MIT",
   "dependencies": {
-    "jslint": "^0.12.1",
-    "request": "^2.88.2"
+    "jslint": "^0.12.1"
   }
 }
