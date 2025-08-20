@@ -1,24 +1,18 @@
 {
   "name": "mmm-shellyemmeter",
-  "version": "1.0.0",
-  "description": "Shelly EM module",
+  "version": "1.0.1",
+  "description": "MagicMirror² module: Shelly EM meter",
   "main": "MMM-ShellyEMMeter.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint . --ext .js"
   },
-  "keywords": [
-    "Magic Mirror 2",
-    "Magic Mirror",
-    "MagicMirrorÂ²",
-    "Smart Mirror",
-    "Shelly",
-    "ShellyEM",
-    "Meter",
-    "FV"
-  ],
   "author": "Maurizio Garritano",
   "license": "MIT",
   "dependencies": {
-    "jslint": "^0.12.1"
+    "axios": "^1.11.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.33.0",
+    "@eslint/js": "^9.33.0"
   }
 }
