@@ -29,7 +29,7 @@ module.exports = [
         setTimeout: "readonly",
         setInterval: "readonly",
         URL: "readonly",
-        // MagicMirror²
+        // MagicMirrorÂ²
         Module: "readonly",
         Log: "readonly",
         document: "readonly",
