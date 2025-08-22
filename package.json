@@ -1,11 +1,23 @@
 {
   "name": "mmm-shellyemmeter",
   "version": "1.0.1",
-  "description": "MagicMirror� module: Shelly EM meter",
+  "description": "MagicMirror² module: Shelly EM meter",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mgarrix/MMM-ShellyEMMeter.git"
+  },
   "main": "MMM-ShellyEMMeter.js",
   "scripts": {
-    "lint": "eslint . --ext .js"
+    "lint": "eslint"
   },
+  "keywords": [
+    "MagicMirror²",
+    "Smart Mirror",
+    "Shelly",
+    "ShellyEM",
+    "Meter",
+    "FV"
+  ],
   "author": "Maurizio Garritano",
   "license": "MIT",
   "dependencies": {

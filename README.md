@@ -1,7 +1,7 @@
 # Shelly-EM Meter
 
 ## Description
-This is a simple MagicMirror² module to display data from a Shelly EM sensor on Magic Mirror and is inspired by the project [Shelly-PM](https://github.com/stefanjacobs/MMM-Shelly-PM).
+This is a simple MagicMirror² module to display data from a Shelly EM sensor on MagicMirror² and is inspired by the project [Shelly-PM](https://github.com/stefanjacobs/MMM-Shelly-PM).
 
 The Shelly EM is a Wi-Fi current and voltage meter that allows you to monitor the consumption of any household appliance, electrical circuit and office equipment. 
 
