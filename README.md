@@ -69,3 +69,13 @@ Check out the `config.sample.js` in the module directory. Copy the content to yo
 If you want a language other than English and Italian, you can add it inside the `translations` folder.
 
 Restart MagicMirror and enjoy.
+
+## Update Instructions
+
+To update the module to the latest version, open a terminal in your MagicMirror installation and run:
+
+```bash
+cd mounts/modules/MMM-ShellyEMMeter
+git pull
+```
+Then restart MagicMirror.
