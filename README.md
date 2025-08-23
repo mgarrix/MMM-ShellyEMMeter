@@ -32,7 +32,7 @@ For it to work properly, it's best to have a static IP for your Shelly. Since it
 
 Include this in your config.js file:
 
-```json
+```javascript
 {
     module: "MMM-ShellyEMMeter",
 			position: "top_right",
