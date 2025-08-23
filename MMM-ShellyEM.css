@@ -14,3 +14,79 @@
 .shellyEM-green{
     color: rgb(0, 255, 0)
 }
+
+.voltage-bar-container {
+  //margin: 15px 0;
+  width: 100%;
+  position: relative;
+}
+
+.voltage-bar {
+  position: relative;
+  height: 5px;
+  width: 100%;
+  border-radius: 3px;
+  overflow: visible;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.voltage-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to right,
+    #ff0000 0%,
+    #ffff00 25%,
+    #00ff00 50%,
+    #ffff00 75%,
+    #ff0000 100%
+  );
+  border-radius: 2px;
+}
+
+.voltage-indicator {
+  position: absolute;
+  top: -2px;
+  bottom: -2px;
+  width: 4px;
+  background: white;
+  z-index: 4;
+  transform: translateX(-50%);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 1);
+  transition: left 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+  border-radius: 1px;
+}
+
+.voltage-value {
+  position: absolute;
+  top: -23px;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: #ffffff !important;
+  //padding: 4px 8px;
+  //border-radius: 3px;
+  font-size: 14px !important;
+  font-weight: bold;
+  //box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 6;
+  text-shadow: none;
+  //border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: left 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+  white-space: nowrap;
+}
+
+@keyframes voltage-pulse {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(255, 255, 255, 1);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 1.2);
+  }
+}
+
+.voltage-indicator {
+  animation: voltage-pulse 2s ease-in-out infinite;
+}

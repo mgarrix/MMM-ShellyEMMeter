@@ -39,13 +39,21 @@ Include this in your config.js file:
 			header: "Shelly EM Meter",
 			config: {
 				refreshInterval: 15, // in seconds
-				localuri: "http://192.168.1.185/status"
+				localuri: "http://192.168.1.185/status",
+				voltageScale: {
+				  nominal: 230,           // V
+				  tolerancePercent: 10,   // ±10%
+				  // optional override:
+				  //min: 100,	// V
+				  //max: 245,	// V
+				}
+
 			}
 },
 ```
 ## Screenshot
 
-![shelly-EM screen](screenshot/NoProduction.png)
+![shelly-EM screen](screenshot/Production_v1.1.0.png)
 ## Installing
 
 Go to your MagicMirror directory
@@ -54,8 +62,6 @@ Go to your MagicMirror directory
 cd mounts/modules
 git clone https://github.com/mgarrix/MMM-ShellyEMMeter
 
-cd MMM-ShellyEMMeter
-npm install
 ```
 
 Check out the `config.sample.js` in the module directory. Copy the content to your `config.js` and change as necessary. You have to change `localuri` to your device's IP address and `refreshInterval` to set the refresh interval (in seconds).
