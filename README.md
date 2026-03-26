@@ -32,28 +32,47 @@ For it to work properly, it's best to have a static IP for your Shelly. Since it
 
 Include this in your config.js file:
 
-```json
+```js
 {
     module: "MMM-ShellyEMMeter",
-			position: "top_right",
-			header: "Shelly EM Meter",
-			config: {
-				refreshInterval: 15, // in seconds
-				localuri: "http://192.168.1.185/status",
-				voltageScale: {
-				  nominal: 230,           // V
-				  tolerancePercent: 10,   // ±10%
-				  // optional override:
-				  //min: 100,	// V
-				  //max: 245,	// V
-				}
-
-			}
+    position: "top_right",
+    header: "Shelly EM Meter",
+    config: {
+        refreshInterval: 15,                          // in seconds
+        localuri: "http://192.168.1.185/status",      // Shelly EM LAN address
+        voltageScale: {
+            nominal: 230,           // nominal voltage (V)
+            tolerancePercent: 10,   // gauge range ±10% around nominal
+            // optional manual override:
+            //min: 207,             // V
+            //max: 253,             // V
+        },
+        maxProduction: 1500,        // photovoltaic peak power (W) – sets gauge scale
+        maxGrid:       3300        // max grid power (W) – sets gauge scale
+    }
 },
 ```
+
+### Configuration options
+
+| Option | Default      | Description |
+|---|--------------|---|
+| `refreshInterval` | `15`         | How often to poll the Shelly EM, in seconds. |
+| `localuri` | *(required)* | Full URL of the Shelly EM `/status` endpoint on your LAN. |
+| `voltageScale.nominal` | `230`        | Nominal mains voltage (V). Used to centre the voltage gauge. |
+| `voltageScale.tolerancePercent` | `10`         | Percentage band around nominal shown on the voltage bar (e.g. `10` → 207–253 V). |
+| `voltageScale.min` / `.max` | —            | Optional hard override of the voltage bar range (V). When set, `nominal` and `tolerancePercent` are ignored. |
+| `maxProduction` | `1500`       | Peak photovoltaic power (W). Sets the full-scale of the **Production** gauge arc. |
+| `maxGrid` | `3300`       | Maximum grid power (W). Sets the full-scale of the **Grid** gauge arc. |
+
+## Visual features
+
+The module renders a triangle layout with three circular gauges (Production, Consumption, Grid) connected by animated flow lines.
+
 ## Screenshot
 
-![shelly-EM screen](screenshot/Production_v1.1.0.png)
+![shelly-EM screen](screenshot/Production_v1.2.0.png)
+
 ## Installing
 
 Go to your MagicMirror directory
@@ -66,16 +85,5 @@ git clone https://github.com/mgarrix/MMM-ShellyEMMeter
 
 Check out the `config.sample.js` in the module directory. Copy the content to your `config.js` and change as necessary. You have to change `localuri` to your device's IP address and `refreshInterval` to set the refresh interval (in seconds).
 
-If you want a language other than English and Italian, you can add it inside the `translations` folder.
 
 Restart MagicMirror and enjoy.
-
-## Update Instructions
-
-To update the module to the latest version, open a terminal in your MagicMirror installation and run:
-
-```bash
-cd mounts/modules/MMM-ShellyEMMeter
-git pull
-```
-Then restart MagicMirror.

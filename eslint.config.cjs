@@ -2,7 +2,6 @@ const js = require("@eslint/js");
 
 /** @type {import('eslint').Linter.FlatConfig[]} */
 module.exports = [
-  // blocco SOLO per ignorare file/cartelle
   {
     ignores: [
       "node_modules/",
@@ -13,7 +12,7 @@ module.exports = [
     ]
   },
 
-  // config vera e propria
+  // config
   js.configs.recommended,
   {
     files: ["**/*.js"],
@@ -37,7 +36,7 @@ module.exports = [
       }
     },
     rules: {
-      // puoi aggiungere regole qui
+
     }
   }
 ];
